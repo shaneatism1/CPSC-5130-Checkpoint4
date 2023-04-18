@@ -25,7 +25,7 @@ public class twoseven extends JFrame{
             		+ "FROM Admit "
             		+ "LEFT JOIN Patient "
             		+ "ON Admit.PID = Patient.PID "
-            		+ "WHERE DATEDIFF(day,Admit.Admit_Date,GETDATE()) between 0 and 30 "
+            		+ "WHERE DATEDIFF(day, Admit.Admit_Date, GETDATE()) >= 0 AND DATEDIFF(day, Admit.Admit_Date, GETDATE()) <= 30 "
             		+ "GROUP BY Patient.PID ";
             ResultSet response = stmt.executeQuery(query);
             

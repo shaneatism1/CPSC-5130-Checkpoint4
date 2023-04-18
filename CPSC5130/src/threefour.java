@@ -21,9 +21,9 @@ public class threefour extends JFrame{
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_database", "root", "password");
             
             Statement stmt = connection.createStatement();
-            String query = "SELECT COUNT(Admit.PID) AS Num_Admissions, Admit.PID, Diagnosis.Name "
+            String query = "SELECT COUNT(Admit.PID) AS Num_Admissions, Admit.PID "
             		+ "FROM Admit "
-            		+ "LEFT JOIN Diagnosis "
+            		+ "RIGHT JOIN Diagnosis "
             		+ "ON Admit.DID = Diagnosis.DID "
             		+ "GROUP BY Admit.PID "
             		+ "ORDER BY Num_Admissions ASC";
@@ -39,7 +39,7 @@ public class threefour extends JFrame{
             
             while (response.next())
             {
-            	outputString = response.getString(1) + "\t" + response.getString(2) + "\t" + response.getString(3);
+            	outputString = response.getString(1) + "\t" + response.getString(2);
             	output = new JTextField(outputString);
                 add(output);
             }        

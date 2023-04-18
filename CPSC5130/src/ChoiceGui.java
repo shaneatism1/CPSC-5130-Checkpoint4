@@ -233,27 +233,27 @@ public class ChoiceGui extends JFrame {
 				}
 				else if(fourone.isSelected()) {
 					fourone fourone = new fourone();
-					fourone.setSize(1010,1000);
+					fourone.setSize(300,1000);
 					fourone.setVisible(true);
 				}
 				else if(fourtwo.isSelected()) {
 					fourtwo fourtwo = new fourtwo();
-					fourtwo.setSize(1010,1000);
+					fourtwo.setSize(200,1000);
 					fourtwo.setVisible(true);
 				}
 				else if(fourthree.isSelected()) {
-					fourthree fourthree = new fourthree();
-					fourthree.setSize(1010,1000);
+					fourthree fourthree = new fourthree(parameter_id.getText());
+					fourthree.setSize(400,1000);
 					fourthree.setVisible(true);
 				}
 				else if(fourfour.isSelected()) {
-					fourfour fourfour = new fourfour();
-					fourfour.setSize(1010,1000);
+					fourfour fourfour = new fourfour(parameter_id.getText());
+					fourfour.setSize(400,1000);
 					fourfour.setVisible(true);
 				}
 				else if(fourfive.isSelected()) {
 					fourfive fourfive = new fourfive();
-					fourfive.setSize(1010,1000);
+					fourfive.setSize(300,1000);
 					fourfive.setVisible(true);
 				}
 				

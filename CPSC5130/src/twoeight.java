@@ -21,7 +21,7 @@ public class twoeight extends JFrame{
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_database", "root", "password");
             
             Statement stmt = connection.createStatement();
-            String query = "SELECT Patient.Last_Name, Patient.First_Name, COUNT(Patient.PID) AS Num_Admissions, AVG(Admit.Discharge_Date - Admit.Admit_Date) AS Average_Duration, MAX(DATEDIFF(day,lag(Admit.Admit_Date,1)) AS Longest_Span, MIN(DATEDIFF(day,lag(Admit.Admit_Date,1)) AS Shortest_Span, AVG(DATEDIFF(day,lag(Admit.Admit_Date,1)) AS Average_Span "
+            String query = "SELECT Patient.Last_Name, Patient.First_Name, COUNT(Patient.PID) AS Num_Admissions, AVG(Admit.Discharge_Date - Admit.Admit_Date) AS Average_Duration, MAX(DATEDIFF(day,lag(Admit.Admit_Date,1))) AS Longest_Span, MIN(DATEDIFF(day,lag(Admit.Admit_Date,1))) AS Shortest_Span, AVG(DATEDIFF(day,lag(Admit.Admit_Date,1))) AS Average_Span "
             		+ "FROM Admit "
             		+ "LEFT JOIN Patient "
             		+ "ON Admit.PID = Patient.PID "
